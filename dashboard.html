@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      function updateClock() {
+        const clockElement = document.getElementById("clock");
+        const now = new Date();
+        clockElement.textContent = now.toLocaleTimeString("tr-TR");
+      }
+
+      function logout() {
+        window.location.href = "index.html";
+      }
+
+      setInterval(updateClock, 1000);
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h2>Kategoriler</h2>
+        <ul>
+          <li data-category="kategori1">Veri Gir</li>
+          <li data-category="kategori2">Genel Bakış</li>
+          <li data-category="kategori3">Performans</li>
+          <li data-category="kategori4">Regresyon Analizi</li>
+          <li data-category="kategori5">Kazanç</li>
+          <li data-category="kategori6">Genel Verim</li>
+        </ul>
+        <ul>
+          <div class="detaylar">
+            <img id="inek-resmi" src="cow.png" alt="Logo" class="logo" />
+          </div>
+          <div class="navbar-center">
+            <span id="username">İyi Çalışmalar!</span>
+          </div>
+          <div class="navbar-right">
+            <button class="logout-btn" onclick="logout()">Çıkış Yap</button>
+            <span class="span1" id="clock"> </span>
+          </div>
+        </ul>
+      </div>
+      <div class="content">
+        <h1>Hoş Geldiniz!</h1>
+        <p>Kategorilerden birini seçerek içeriği görüntüleyebilirsiniz.</p>
+
+        <div id="kategori1" class="kategori-form" style="display: none">
+          <h2>Veri Ekle</h2>
+          <form action="kategori1.php" method="POST">
+            <table>
+              <tr>
+                <td><label for="inek_adi">İnek Adı:</label></td>
+                <td>
+                  <input type="text" id="inek_adi" name="inek_adi" required />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="yem_miktari">Yem Miktarı (kg):</label></td>
+                <td>
+                  <input
+                    type="number"
+                    id="yem_miktari"
+                    name="yem_miktari"
+                    step="0.01"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="yem_turu">Yem Türü:</label></td>
+                <td>
+                  <input type="text" id="yem_turu" name="yem_turu" required />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="saglik_durumu"
+                    >İnek Sağlık Durumu (1: Sağlıklı, 0.5: Hasta):</label
+                  >
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="saglik_durumu"
+                    name="saglik_durumu"
+                    step="0.01"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="yas">Yaş:</label></td>
+                <td><input type="number" id="yas" name="yas" required /></td>
+              </tr>
+              <tr>
+                <td><label for="cevre">Çevre (Sıcaklık/Nem):</label></td>
+                <td><input type="text" id="cevre" name="cevre" required /></td>
+              </tr>
+              <tr>
+                <td><label for="sut_miktari">Süt Miktarı (Litre):</label></td>
+                <td>
+                  <input
+                    type="number"
+                    id="sut_miktari"
+                    name="sut_miktari"
+                    step="0.01"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="kilo">Kilo (kg):</label></td>
+                <td>
+                  <input
+                    type="number"
+                    id="kilo"
+                    name="kilo"
+                    step="0.01"
+                    required
+                  />
+                </td>
+              </tr>
+            </table>
+            <button type="submit" class="submit-btn">Kaydet</button>
+          </form>
+        </div>
+
+        <div id="kategori2" class="kategori-form" style="display: none">
+          <h2>Kategori 2 Girişi</h2>
+          <form action="kategori2.php" method="POST">
+            <table>
+              <tr>
+                <td><label for="parametre1">Parametre 1:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    id="parametre1"
+                    name="parametre1"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="parametre2">Parametre 2:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    id="parametre2"
+                    name="parametre2"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="parametre3">Parametre 3:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    id="parametre3"
+                    name="parametre3"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="parametre4">Parametre 4:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    id="parametre4"
+                    name="parametre4"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="parametre5">Parametre 5:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    id="parametre5"
+                    name="parametre5"
+                    required
+                  />
+                </td>
+              </tr>
+            </table>
+            <button type="submit" class="submit-btn">Kaydet</button>
+          </form>
+        </div>
+
+        <div id="kategori3" class="kategori-form" style="display: none">
+          <h2>İnek Bazında Süt Üretimi (Pasta Dilimi)</h2>
+          <label for="inekSec">İnek Seçin:</label>
+          <select id="inekSec">
+            <option value="">-- İnek Seçin --</option>
+          </select>
+          <button id="gosterKategori3" class="submit-btn">Göster</button>
+          <canvas id="kategori3Chart" width="400" height="400"></canvas>
+        </div>
+        <div id="kategori4" class="kategori-form" style="display: none">
+          <h2>Regresyon Analizi</h2>
+          <button id="gosterKategori4">Regresyonu Göster</button>
+          <canvas
+            id="kategori4Chart"
+            style="max-width: 800px; margin-top: 20px"
+          ></canvas>
+        </div>
+
+        <div id="kategori5" class="kategori-form" style="display: none">
+          <h2>Brüt Getiri</h2>
+          <button id="gosterKategori5">Brüt Getiriyi Göster</button>
+          <table
+            id="kategori5Table"
+            border="1"
+            style="width: 100%; margin-top: 20px"
+          >
+            <thead>
+              <tr>
+                <th>İnek Adı</th>
+                <th>Brüt Getiri (TL)</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div id="kategori6" class="kategori-form" style="display: none">
+          <h2>İneklerin Toplam Süt Miktarları</h2>
+          <button id="gosterKategori6">Grafiği Göster</button>
+          <canvas
+            id="kategori6Chart"
+            style="max-width: 800px; margin-top: 20px"
+          ></canvas>
+        </div>
+      </div>
+    </div>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

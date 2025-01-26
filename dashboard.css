@@ -1,0 +1,176 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 102vh;
+  background-color: #f4f7fa;
+}
+
+.span1 {
+  margin-left: 110px; /* sağ tarafına boşluk ekler */
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #ffc107;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #495057;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.sidebar ul li:hover {
+  background-color: #ffc107;
+  color: black;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+  background-color: #ffffff;
+}
+
+.content h1 {
+  color: #343a40;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.content p {
+  color: #6c757d;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.kategori-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 28px;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+table th,
+table td {
+  padding: 12px;
+  font-size: 16px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f1f1f1;
+  color: #343a40;
+}
+
+table td {
+  background-color: #fff;
+  color: #343a40;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table td {
+  word-wrap: break-word;
+}
+table td label {
+  font-weight: bold;
+}
+
+table td input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+table td input:focus {
+  outline: none;
+  border-color: #ffc107;
+  background-color: #fff;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  color: white;
+  background-color: #ffc107;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #e0a800;
+}
+
+.submit-btn:focus {
+  outline: none;
+}
+#kategori3 canvas {
+  margin: 20px auto;
+  display: block;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
